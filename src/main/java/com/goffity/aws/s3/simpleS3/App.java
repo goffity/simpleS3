@@ -30,9 +30,6 @@ public class App {
 
 		AmazonS3 amazonS3 = AmazonS3Client.builder().withRegion(Regions.AP_SOUTHEAST_1).build();
 
-		// Region region = Region.getRegion(Regions.AP_SOUTHEAST_1);
-		// amazonS3.setRegion(region);
-
 		System.out.println("Listing buckets");
 		for (Bucket bucket : amazonS3.listBuckets()) {
 			System.out.println(" - " + bucket.getName());
@@ -52,7 +49,6 @@ public class App {
 					break;
 				}
 			}
-			;
 
 			System.out.println(" - removing versions from bucket");
 			VersionListing version_listing = amazonS3
